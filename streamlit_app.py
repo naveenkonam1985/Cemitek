@@ -21,7 +21,7 @@ if 'calculate' not in st.session_state:
 
 with st.sidebar:
   st.write("Cemitek")
-  tpd = st.text_input(label="Enter plant capacity", key='tpd')
+  tpd_value = st.text_input(label="Enter plant capacity", key='tpd')
   col1,col2 = st.columns([1,1])
   
   with col1:
@@ -33,4 +33,5 @@ with st.sidebar:
 with st.container:
   if st.session_state.calculate:
     st.write("Calculate Button clicked")
+    st.write(f"TPD value is: {tpd_value}")
 
