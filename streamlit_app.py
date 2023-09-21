@@ -7,12 +7,30 @@ st.set_page_config(page_title='Cemitek', page_icon=None, layout="wide", initial_
 st.title("Cemitek")
 st.write("Cement Plant Design")
 
+def capacities():
+  st.session_state.calculate = True
+
+def clear():
+  st.session_state.tpd = False
+
+if 'tpd' not in st.session_state:
+    st.session_state.tpd = False
+
+if 'calculate' not in st.session_state:
+    st.session_state.calculate = False
+
 with st.sidebar:
   st.write("Cemitek")
-  tpd = st.text_input(label="Enter plant capacity")
+  tpd = st.text_input(label="Enter plant capacity", key='tpd')
   col1,col2 = st.columns([1,1])
+  
   with col1:
-    st.button("Calculate",key='calculate', use_container_width=True)
+    st.button("Calculate",on_click=capacities, key='calculate', type='primary', use_container_width=True)
+      
   with col2:
-    st.button("Clear", key='clear', use_container_width=True)
+    st.button("Clear", on_click=clear, key='clear', use_container_width=True)
+
+with st.container:
+  if st.session_state.calculate:
+    st.write("Calculate Button clicked")
 
