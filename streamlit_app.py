@@ -30,7 +30,8 @@ with st.sidebar:
   
   if st.session_state.calculate:
       if tpd_value is not None:
-        st.write("Please Enter a value to proceed"
+        st.write("Please Enter a value to proceed")
+        
 
 with st.container():
   plant_data = {}
