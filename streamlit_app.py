@@ -27,15 +27,20 @@ with st.sidebar:
       
   with col2:
     st.button("Clear", on_click=clear, use_container_width=True)
+  
+  if st.session_state.calculate:
+      if tpd_value is not None:
+        st.write("Please Enter a value to proceed"
 
 with st.container():
   plant_data = {}
   if st.session_state.calculate:
-    st.write(f"Entered TPD value is: {tpd_value}")
-    tpd_value_corrected = int(tpd_value)
-
-    plant_data['plant_capacity'] = (tpd_value_corrected * 330) / 1000000
-
-    st.write(f"The plant capacity is: {plant_data['plant_capacity']} MTPA")
+    if tpd_value:
+      st.write(f"Entered TPD value is: {tpd_value}")
+      tpd_value_corrected = int(tpd_value)
+  
+      plant_data['plant_capacity'] = (tpd_value_corrected * 330) / 1000000
+  
+      st.write(f"The plant capacity is: {plant_data['plant_capacity']} MTPA")
     
 
