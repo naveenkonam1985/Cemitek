@@ -11,7 +11,8 @@ def capacities():
   st.session_state.calculate = True
 
 def clear():
-  st.session_state.tpd = True
+  st.session_state.calculate = False
+  st.session_state.tpd = ""
 
 if 'tpd' not in st.session_state:
     st.session_state.tpd = False
