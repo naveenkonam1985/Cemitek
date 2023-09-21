@@ -7,5 +7,11 @@ st.set_page_config(page_title='Cemitek', page_icon=None, layout="wide", initial_
 st.title("Cemitek")
 st.write("Cement Plant Design")
 
-tpd = st.text_input("Enter plant capacity to calculate the parameters")
+with st.sidebar:
+  tpd = st.text_input("Enter plant capacity to calculate the parameters")
+  col1,col2 = st.columns([1,1])
+  with col1:
+    st.button("Click Me")
+  with col2:
+    st.button("Clear")
 
