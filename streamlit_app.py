@@ -25,10 +25,10 @@ with st.sidebar:
   col1,col2 = st.columns([1,1])
   
   with col1:
-    st.button("Calculate",on_click=capacities, key='calculate', type='primary', use_container_width=True)
+    st.button("Calculate",on_click=capacities, type='primary', use_container_width=True)
       
   with col2:
-    st.button("Clear", on_click=clear, key='clear', use_container_width=True)
+    st.button("Clear", on_click=clear, use_container_width=True)
 
 with st.container:
   if st.session_state.calculate:
