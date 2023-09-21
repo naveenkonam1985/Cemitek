@@ -30,7 +30,7 @@ with st.sidebar:
   with col2:
     st.button("Clear", on_click=clear, use_container_width=True)
 
-with st.container:
+with st.container():
   if st.session_state.calculate:
     st.write("Calculate Button clicked")
     st.write(f"TPD value is: {tpd_value}")
