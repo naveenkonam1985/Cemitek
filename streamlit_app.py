@@ -34,7 +34,7 @@ with st.container():
     st.write(f"Entered TPD value is: {tpd_value}")
     tpd_value_corrected = int(tpd_value)
 
-    plant_data['plant_capacity'] = (tpd_value_corrected * 21 * 330) / 100000
+    plant_data['plant_capacity'] = (tpd_value_corrected * 21 * 330) / 1000000
 
     st.write(f"The plant capacity is: {plant_data['plant_capacity']} MTPA")
     
