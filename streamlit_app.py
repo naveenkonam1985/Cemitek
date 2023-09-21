@@ -8,10 +8,11 @@ st.title("Cemitek")
 st.write("Cement Plant Design")
 
 with st.sidebar:
+  st.write("Cemitek")
   tpd = st.text_input("Enter plant capacity to calculate the parameters")
   col1,col2 = st.columns([1,1])
   with col1:
-    st.button("Click Me")
+    st.button("Click Me",use_container_width=True)
   with col2:
-    st.button("Clear")
+    st.button("Clear", use_container_width=True)
 
