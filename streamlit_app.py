@@ -29,7 +29,7 @@ with st.sidebar:
     st.button("Clear", on_click=clear, use_container_width=True)
   
   if st.session_state.calculate:
-      if tpd_value is not None:
+      if tpd_value is None:
         st.write("Please Enter a value to proceed")
         
 
