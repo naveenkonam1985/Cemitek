@@ -7,4 +7,5 @@ st.set_page_config(page_title='Cemitek', page_icon=None, layout="wide", initial_
 st.title("Cemitek")
 st.write("Cement Plant Design")
 
+tpd = st.text_input("Enter plant capacity to calculate the parameters")
 
