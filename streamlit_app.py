@@ -37,6 +37,15 @@ with st.container():
   col1,col2 = st.columns([1,1])
 
   with col1:
+    with st.form("my_form"):
+     st.write("Design Parameters")
+     st.text_input("Kiln Capacity")
+     # Every form must have a submit button.
+     submitted = st.form_submit_button("Submit")
+     if submitted:
+         st.write("Form Submitted")
+       
+  with col2:
     plant_data = {}
     if st.session_state.calculate:
       if tpd_value:
@@ -47,17 +56,5 @@ with st.container():
     
         st.write(f"The plant capacity is: {plant_data['plant_capacity']} MTPA")
 
-  with col2:
-    with st.form("my_form"):
-     st.write("Inside the form")
-     slider_val = st.slider("Form slider")
-     checkbox_val = st.checkbox("Form checkbox")
-  
-     # Every form must have a submit button.
-     submitted = st.form_submit_button("Submit")
-     if submitted:
-         st.write("slider", slider_val, "checkbox", checkbox_val)
-  
-  st.write("Outside the form")
       
 
