@@ -34,14 +34,30 @@ with st.sidebar:
         
 
 with st.container():
-  plant_data = {}
-  if st.session_state.calculate:
-    if tpd_value:
-      st.write(f"Entered TPD value is: {tpd_value}")
-      tpd_value_corrected = int(tpd_value)
-  
-      plant_data['plant_capacity'] = (tpd_value_corrected * 330) / 1000000
-  
-      st.write(f"The plant capacity is: {plant_data['plant_capacity']} MTPA")
+  col1,col2 = st.columns([1,1])
+
+  with col1:
+    plant_data = {}
+    if st.session_state.calculate:
+      if tpd_value:
+        st.write(f"Entered TPD value is: {tpd_value}")
+        tpd_value_corrected = int(tpd_value)
     
+        plant_data['plant_capacity'] = (tpd_value_corrected * 330) / 1000000
+    
+        st.write(f"The plant capacity is: {plant_data['plant_capacity']} MTPA")
+
+  with col2:
+    with st.form("my_form"):
+     st.write("Inside the form")
+     slider_val = st.slider("Form slider")
+     checkbox_val = st.checkbox("Form checkbox")
+  
+     # Every form must have a submit button.
+     submitted = st.form_submit_button("Submit")
+     if submitted:
+         st.write("slider", slider_val, "checkbox", checkbox_val)
+  
+  st.write("Outside the form")
+      
 
