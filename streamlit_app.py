@@ -22,7 +22,7 @@ with st.container():
   with col2:
     if submitted:
       st.write("Form Submitted")
-      plant_capacity = kiln_tpd * kiln_running_days
+      plant_capacity = int(kiln_tpd) * int(kiln_running_days)
       st.write(f"Plant Capacity {plant_capacity} MTPA")
 
       
