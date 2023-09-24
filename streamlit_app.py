@@ -13,14 +13,17 @@ with st.container():
   with col1:
     with st.form("my_form"):
      st.write("Design Parameters")
-     st.text_input("Kiln Capacity")
+     kiln_tpd = st.text_input("Kiln Capacity")
+     kiln_running_days = st.text_input("Kiln Running Days") 
      # Every form must have a submit button.
      submitted = st.form_submit_button("Submit")
-     if submitted:
-         st.write("Form Submitted")
+     
        
   with col2:
-    st.write("Resulting Data")
+    if submitted:
+      st.write("Form Submitted")
+      plant_capacity = kiln_tpd * kiln_running_days
+      st.write(f"Plant Capacity {plant_capacity} MTPA")
 
       
 
